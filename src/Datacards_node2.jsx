@@ -3,7 +3,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import "./Datacards.css"
 
-function Datacards() {
+function Datacards_node2() {
   const [temp, setTemp] = useState(0);
   const [pm25, setPm25] = useState(0);
   const [pm10, setPm10] = useState(0);
@@ -11,7 +11,7 @@ function Datacards() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      fetch("https://api.thingspeak.com/channels/2322148/feeds.json?api_key=UAK6R7X9P7F4GKS8&results=1")
+      fetch("https://api.thingspeak.com/channels/2322158/feeds.json?api_key=43EXU14552H50KSP&results=2")
         .then(response => response.json())
         .then(data => {
           const latestFeed = data.feeds[data.feeds.length - 1];
@@ -27,8 +27,8 @@ function Datacards() {
 
   return (
     <div className="cards">
-      <div className="card1">
-        <h3>NODE 1</h3>
+        <div className="card1">
+        <h3>NODE 2</h3>
         </div>
       <div className="card1">
         <h3>Temp</h3>
@@ -61,4 +61,4 @@ function Datacards() {
   );
 }
 
-export default Datacards;
+export default Datacards_node2;
